@@ -1,0 +1,51 @@
+<?php
+class DB{
+	private $_numRow;
+	private $dbh= null;
+
+	public function __constuct()
+	{
+		$driver = "mysql:host=".HOST."; dbname= ". DB_NAME;
+		try 
+		{
+			$this-> dbh = new PDO($driver, DB_USER, DB_PASS);
+			$this-> dbh -> query("set names 'urf8' ");
+		} 
+		catch (PDOException $e) 
+		{
+			echo "Err:". $e->getMessage(); exit();
+			
+		}
+	}
+	public function __destuct(){
+		$this->dbh = null;
+	}
+	public function getRowCount(){
+		return $this->_numRow;
+	}
+	private function query($sql, $arr=array(), $mode= PDO::FETCH_ASSOC){
+		$stm= $this ->dbh-> prepare($sql);
+		if(!$stm-> execute($arr)){
+			echo "Sql lỗi."; exit;
+		}
+		$this->_numRow= $stm->rowCount();
+
+		return $stm -> fetchAll($mode);
+	}
+	/*
+		Sử dụng cho các sql select
+		*/
+		public function exeQuery($sql,  $arr = array(), $mode = PDO::FETCH_ASSOC)
+		{
+			return $this->query($sql, $arr, $mode);	
+		}
+		/*
+		Sử dụng cho các sql cập nhật dữ liệu. Kết quả trả về số dòng bị tác động
+		*/
+		public function exeNoneQuery($sql,  $arr = array(), $mode = PDO::FETCH_ASSOC)
+		{
+			$this->query($sql, $arr, $mode);	
+			return $this->getRowCount();
+		}
+}
+?>
