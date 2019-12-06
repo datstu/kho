@@ -1,5 +1,5 @@
 
-
+<div class="content">
 				<div class="content-top">
 					<h3 class="future">Sản phẩm nổi bật</h3>
 					<div class="content-top-in">
@@ -10,21 +10,21 @@
 							
 							<div class="col-md">
 								
-								<a href="single.php?idsp=<?php echo $r["masach"]; ?>">
+						<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>">
 
 									<img style="height: 157px;" src="images/book/<?php echo $r["hinh"]; ?>" alt="" />
 								</a>	
 								<div class="top-content">
-									<h5><a href="single.php?idsp=<?php echo $r["masach"]; ?>">
+									<h5><a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>">
 										<?php
 										echo $r["tensach"];
 										
 										 ?>
 									</a></h5>
 									<div class="white">
-										<a href="single.php?idsp=<?php echo $r["masach"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Xem Chi Tiết</a>
+				<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Xem Chi Tiết</a>
 										<p class="dollar">
-											<span class="in-dollar"><?php echo $r["hinh"] ?></span></p>
+											<span class="in-dollar"><?php echo number_format($r["gia"]); ?></span></p>
 										<div class="clearfix"></div>
 									</div>
 
@@ -85,18 +85,16 @@
 					</div>
 				</div>
 				<!---->
-				<?php
-				$data2 = $obj->query("select * from sach limit 0,5");
-	$sp2 = $data2 ->fetchAll();	?>
+				
 				<div class="content-bottom">
 					<h3 class="future">Linh Kiện Các Loại</h3>
 					<div class="content-bottom-in">
 						<ul id="flexiselDemo2">
-						<?php foreach ($sp2 as $key => $r) {
+						<?php $list = $book->getRand(4); foreach ($list as $key => $r) {
 								?>
 								
 						<li><div class="col-md men">
-								<a href="single.php?idsp=<?php echo $r["masach"] ?>" class="compare-in ">
+								<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>" class="compare-in ">
 									<img style="height: 284px;" src="images/book/<?php echo $r["hinh"]; ?>" alt="" />
 								<div class="compare in-compare">
 									<span>Xem chi tiết</span>
@@ -104,7 +102,7 @@
 								<div class="top-content bag">
 									<h5><a href="single.php?idsp=<?php echo $r["masach"] ?>"><?php echo $r["tensach"] ?></a></h5>
 									<div class="white">
-										<a href="single.php?idsp=<?php echo $r["masach"] ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ </a>
+										<a href="index.php?mod=cart&ac=home&idsp=<?php echo $r["masach"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ </a>
 										<p class="dollar"><span class="in-dollar"><?php echo $r["gia"] ?>đ</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -154,7 +152,7 @@
 					<li ><a href="#"><i  class="next"> </i></a></li>
 				</ul>
 			
-				
+			</div>	
 				<!---->
 				<!---->
 				

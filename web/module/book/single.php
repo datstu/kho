@@ -1,15 +1,18 @@
- <?php
+
+			
+		 <?php
   $masp= isset($_GET["idsp"])?$_GET["idsp"]:"";
 					
 
 
 					?> 
 <?php 	
-					$obj = new PDO("mysql:host=localhost;dbname=linhkien","root","");
-					$obj ->query("set names 'utf8'");
+					$sp = $book->getDetail($masp);
 
-					$data = $obj->query("select * from sach where masach='$masp' ");
-					$sp = $data ->fetchAll();	 ?>
+					
+						 ?>
+
+					<div class="single">
 <div class="col-md-9 top-in-single">
 <?php foreach ($sp as $key => $z) {
 								?>
@@ -37,7 +40,7 @@
 							<h4><?php echo $r["tensach"]; ?></h4>
 							<div class="para-grid">
 								<span  class="add-to"><?php echo $r["gia"]; ?>đ</span>
-								<a href="#" class="hvr-shutter-in-vertical cart-to">Thêm vào giỏ hàng</a>					
+								<a href="?mod=cart&ac=home&idsp=<?php echo $r["gia"]; ?>" class="hvr-shutter-in-vertical cart-to">Thêm vào giỏ hàng</a>					
 								<div class="clearfix"></div>
 							 </div>
 							<h5></h5>
@@ -81,7 +84,7 @@
 								<div class="top-content">
 									<h5>Mascot Kitty - White</h5>
 									<div class="white">
-										<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ hàng</a>
+										<a href="?mod=cart&ac=home&idsp=<?php echo $r["gia"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ hàng</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -168,3 +171,5 @@
 				</div>
 				</div>
 				<div class="clearfix"> </div>
+			</div>
+	  

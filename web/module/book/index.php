@@ -15,7 +15,7 @@ if (!defined("ROOT"))
 		}
 	if ($ac=="detail")
 		{
-			include ROOT."/module/book/detail.php";	
+			include ROOT."/module/book/single.php";	
 		}
 	if ($ac=="search")
 		{

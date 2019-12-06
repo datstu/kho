@@ -29,11 +29,11 @@ include ROOT."/inc/function.php";
 	</div>
 		<!---->
 		<div class="container">
-			<div class="content">
+			
 				<?php
 				include "mod.php";
 				?>
-			</div>
+			
 		</div>
 		<!---->
 		<div class="footer">
