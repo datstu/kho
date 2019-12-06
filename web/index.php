@@ -1,9 +1,12 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+include "config/config.php";
+include ROOT."/inc/function.php";
+// if (!isset($_SESSION)) session_start();
+ spl_autoload_register("loadClass");
+// $db= new Db();
+//$cart = new Cart();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="content">
 				<?php
-				include "inc/content_container.php";
+				include "mod.php";
 				?>
 			</div>
 		</div>

@@ -1,38 +1,45 @@
 <?php
-class DB{
-	private $_numRow;
-	private $dbh= null;
-
-	public function __constuct()
-	{
-		$driver = "mysql:host=".HOST."; dbname= ". DB_NAME;
-		try 
+class Db{
+		private $_numRow;
+		private $dbh= null;
+		
+		public function __construct()
 		{
-			$this-> dbh = new PDO($driver, DB_USER, DB_PASS);
-			$this-> dbh -> query("set names 'urf8' ");
-		} 
-		catch (PDOException $e) 
+			$driver="mysql:host=". HOST."; dbname=". DB_NAME;
+			try
+			{
+				$this->dbh = new PDO($driver, DB_USER, DB_PASS);
+				$this->dbh->query("set names 'utf8' ");
+				
+			}	
+			catch(PDOException $e)
+			{
+				echo "Err:". $e->getMessage();	exit();
+			}
+		}
+		
+		public function __destruct()
 		{
-			echo "Err:". $e->getMessage(); exit();
+			$this->dbh= null;
+		}
+	
+		public function getRowCount()
+		{
+			return $this->_numRow;	
+		}
+		
+		private function query($sql, $arr = array(), $mode = PDO::FETCH_ASSOC)
+		{
+			$stm = $this->dbh->prepare($sql);
+			if (!$stm->execute( $arr)) 
+				{
+					echo "Sql lỗi."; //exit;	
+				}
+			$this->_numRow = $stm->rowCount();
+			return $stm->fetchAll($mode);
 			
 		}
-	}
-	public function __destuct(){
-		$this->dbh = null;
-	}
-	public function getRowCount(){
-		return $this->_numRow;
-	}
-	private function query($sql, $arr=array(), $mode= PDO::FETCH_ASSOC){
-		$stm= $this ->dbh-> prepare($sql);
-		if(!$stm-> execute($arr)){
-			echo "Sql lỗi."; exit;
-		}
-		$this->_numRow= $stm->rowCount();
-
-		return $stm -> fetchAll($mode);
-	}
-	/*
+		/*
 		Sử dụng cho các sql select
 		*/
 		public function exeQuery($sql,  $arr = array(), $mode = PDO::FETCH_ASSOC)
@@ -47,5 +54,15 @@ class DB{
 			$this->query($sql, $arr, $mode);	
 			return $this->getRowCount();
 		}
-}
+		
+		/* su dung de dem so phan tu cua table ...*/
+		public function countItems($sql, $arr= array())
+		{
+			$data = $this->exeQuery($sql, $arr, PDO::FETCH_BOTH);
+			return $data[0][0];
+		}
+		
+	
+	
+	}
 ?>
