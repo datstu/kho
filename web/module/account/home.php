@@ -1,4 +1,5 @@
-<h2 class="account-in">Tài Khoản</h2>
+<div class="account">
+				<h2 class="account-in">Tài Khoản</h2>
 				<form>
 				<div>
 					<span>Họ và tên*</span>
@@ -18,3 +19,4 @@
 				</div>				
 					<input type="submit" value="Login"> 
 				</form>
+			</div>

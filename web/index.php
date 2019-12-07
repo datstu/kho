@@ -22,11 +22,18 @@ include ROOT."/inc/function.php";
 		include "inc/header.php";
 	?>
 	</div>
-	<div class="banner-mat">
-		<div class="container">
-			<?php include "inc/banner_container.php";?>
-		</div>
-	</div>
+	<!--   web chi hien thi baner khi mod = book -->
+	<?php $mod= isset($_GET["mod"])?$_GET["mod"]:"book";
+	if ($mod == "book" )
+
+			{
+			?> 
+	 <div class="banner-mat">
+	 	<div class="container">
+	 		<?php include "inc/banner_container.php";?>
+	 	</div>
+	 </div> 
+	<?php } ?>
 		<!---->
 		<div class="container">
 			

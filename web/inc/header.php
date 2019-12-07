@@ -8,7 +8,7 @@
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 							<!-- <li  ><a href="wishlist.html">WISH LIST (0)</a> </li> -->
-							<li  ><a href="account.php">  Tài Khoản</a></li>
+							<li  ><a href="index.php?mod=account&ac=home">  Tài Khoản</a></li>
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
 							<li > <a href="checkout.html" >Giỏ Hàng</a> </li>	
 							<li><div class="cart">
@@ -94,7 +94,7 @@
 		<div class="header-bottom-in">
 			<div class="container">
 			<div class="header-bottom-on">
-			<p class="wel"><a href="#">Chào bạn, bạn có thể đăng nhập hoặc tạo tài khoản ngay.</a></p>
+			<p class="wel"><a href="index.php?mod=account&ac=home">Chào bạn, bạn có thể đăng nhập hoặc tạo tài khoản ngay.</a></p>
 			<div class="header-can">
 				<ul class="social-in">
 						<li><a href="#"><i> </i></a></li>
