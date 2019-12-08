@@ -8,7 +8,23 @@
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 							<!-- <li  ><a href="wishlist.html">WISH LIST (0)</a> </li> -->
-							<li  ><a href="index.php?mod=account&ac=home">  Tài Khoản</a></li>
+							<li  >
+							<?php 
+						if (isset($_SESSION['login']))
+							{
+								//echo $_SESSION['login']['hoten'];
+								echo "<pre>";
+							  print_r($_SESSION);
+								echo "<a href='logout.php'>Thoat</a>";
+							}
+							else{ ?>
+							<a href="login.html"> 
+								
+							 Tài Khoản
+							 </a>
+							<?php } ?>
+							 </li>
+
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
 							<li > <a href="checkout.html" >Giỏ Hàng</a> </li>	
 							<li><div class="cart">
@@ -62,7 +78,7 @@
 				<ul class="nav">
 					<li class="active"><a href="index.php"><i> </i>Trang chủ</a></li>
 											
-						<li><a href="products.html" >  Ram</a></li>            
+						<li><a href="index.php?mod=account&ac=login" >  Đăng Nhập</a></li>            
 						<li><a href="products.html" >Cpu</a></li>						  				 
 						<li><a href="products.html" >Card</a>
 						<ul class="drop">
@@ -91,6 +107,7 @@
 			</div>
 		</div>
 		</div>
+
 		<div class="header-bottom-in">
 			<div class="container">
 			<div class="header-bottom-on">

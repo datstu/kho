@@ -40,7 +40,32 @@
 							<h4><?php echo $r["tensach"]; ?></h4>
 							<div class="para-grid">
 								<span  class="add-to"><?php echo $r["gia"]; ?>đ</span>
-								<a href="?mod=cart&ac=home&idsp=<?php echo $r["gia"]; ?>" class="hvr-shutter-in-vertical cart-to">Thêm vào giỏ hàng</a>					
+								<!-- bat dau	login -->
+										
+
+									<a href="#login-box" class="login-window button">THÊM VÀO GIỎ</a>
+        <div id="login-box" class="login">
+            <p class="login_title"> Đăng nhập</p>
+            <a href="#" class="close"><img src="close.png" class="img-close" title="Close Window" alt="Close" /></a>
+            <form method="post" class="login-content" action="#">
+            <label class="username">
+            <span>Tên hoặc email</span>
+            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+            </label>
+            <label class="password">
+            <span>Mật khẩu</span>
+            <input id="password" name="password" value="" type="password" placeholder="Password">
+            </label>
+            <button class="button submit-button" type="button">Đăng nhập</button>
+            <p>
+            <a class="forgot" href="#">Quên mật khẩu?</a>
+            </p>        
+            </form>
+        </div>	
+								<!-- 	KET THUC LOGIN	 -->
+
+
+
 								<div class="clearfix"></div>
 							 </div>
 							<h5></h5>
@@ -97,7 +122,7 @@
 								<div class="top-content">
 									<h5>Mascot Kitty - White</h5>
 									<div class="white">
-										<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ hàng</a>
+										<a href="#login-box" class="login-window button">Thêm vào giỏ hàng</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>

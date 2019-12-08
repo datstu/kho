@@ -1,4 +1,11 @@
 <?php
+if (!isset($_SESSION)) session_start();
+if (!isset($_SESSION['login']))
+{
+	header('location:login.html');
+}
+?>
+<?php
 include "config/config.php";
 include ROOT."/inc/function.php";
 // if (!isset($_SESSION)) session_start();
@@ -7,6 +14,7 @@ include ROOT."/inc/function.php";
 //$cart = new Cart();
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +42,7 @@ include ROOT."/inc/function.php";
 	 	</div>
 	 </div> 
 	<?php } ?>
+
 		<!---->
 		<div class="container">
 			
@@ -43,6 +52,7 @@ include ROOT."/inc/function.php";
 			
 		</div>
 		<!---->
+		 
 		<div class="footer">
 			<?php
 				include "inc/footer.php";

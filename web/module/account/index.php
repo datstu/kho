@@ -9,5 +9,9 @@ if (!defined("ROOT"))
 		{
 			include ROOT."/module/account/home.php";
 		}
+	if ($ac=="login")
+		{
+			include ROOT."/module/account/login.php";
+		}
 	
 ?>

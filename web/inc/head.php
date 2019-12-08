@@ -2,6 +2,12 @@
 <title>Đồ án chuyên ngành || Cửa hàng linh kiện máy tính</title>
 
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+				<!--begin head for login -->
+ <link href="css/login.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/dialog.js"></script>
+       <!--  end head for login -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -60,3 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});	  
 });
 </script>
+<style>
+fieldset{width:50%; margin:100px auto;}
+.info{width:600px; color:#006; background:#6FC; margin:0 auto}
+</style>

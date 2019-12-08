@@ -1263,17 +1263,10 @@ h2.account-in:after{
 }
 .account span{
 	font-size:1.1em;
-	padding-right: 1.85em;
+	
+	
 }
-span.name-in {
-	padding-right: 2em;
-}
- span.mail{
-	padding-right: 4.2em;
-}
-span.word{
-	padding-right: 2.2em;
-}
+
 .account div{
 	padding:1em 0;
 }
