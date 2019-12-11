@@ -5,6 +5,7 @@
 					<div class="content-top-in">
 						<?php $list = $book->getRand(4);
 						 foreach ($list as $key => $r) {
+						 	
 								?>
 						<div class="col-md-3 md-col">
 							

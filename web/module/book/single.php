@@ -2,15 +2,16 @@
 			
 		 <?php
   $masp= isset($_GET["idsp"])?$_GET["idsp"]:"";
-					
+			
 
 
 					?> 
 <?php 	
 					$sp = $book->getDetail($masp);
 
-					
+
 						 ?>
+					
 
 					<div class="single">
 <div class="col-md-9 top-in-single">
@@ -34,6 +35,7 @@
 					</div>	
 					
 					<?php }foreach ($sp as $key => $r) {
+						
 								?>
 					<div class="col-md-7 single-top-in">
 						<div class="single-para">
@@ -43,33 +45,29 @@
 								<!-- bat dau	login -->
 										
 
-									<a href="#login-box" class="login-window button">THÊM VÀO GIỎ</a>
-        <div id="login-box" class="login">
-            <p class="login_title"> Đăng nhập</p>
-            <a href="#" class="close"><img src="close.png" class="img-close" title="Close Window" alt="Close" /></a>
-            <form method="post" class="login-content" action="#">
-            <label class="username">
-            <span>Tên hoặc email</span>
-            <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
-            </label>
-            <label class="password">
-            <span>Mật khẩu</span>
-            <input id="password" name="password" value="" type="password" placeholder="Password">
-            </label>
-            <button class="button submit-button" type="button">Đăng nhập</button>
-            <p>
-            <a class="forgot" href="#">Quên mật khẩu?</a>
-            </p>        
-            </form>
-        </div>	
-								<!-- 	KET THUC LOGIN	 -->
+			 <!-- <a href="index.php?mod=cart&id=<?php  echo $r["masach"]; ?>&<?php echo $num ;?>" class="hvr-shutter-in-vertical cart-to">THÊM VÀO GIỎ</a>  -->
+        
+								
+           <form action="" method="post">
+						
+						<input type="number" class="buyfield" name="number" value="1" min="1" />
+						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
 
+				
+						
+					</form>
+					<?php 
+					$num = isset($_POST['number'])?$_POST['number']:0;
+					$cart->add($masp, $num);
+					echo $r["masach"];
+					 ?>
+				<!-- 	<a href="index.php?mod=cart&id=<?php  echo $r["masach"]."&number=$num"; ?>&ac=add" class="hvr-shutter-in-vertical cart-to">THÊM VÀO GIỎ</a> -->
 
 
 								<div class="clearfix"></div>
 							 </div>
-							<h5></h5>
-							<!-- <div class="available">
+							<!--<h5></h5>
+							  <div class="available">
 								<h6>Tùy chọn có sẳn</h6>
 								<ul>
 									<li>Màu sắc:
@@ -85,7 +83,7 @@
 									<option>small</option>
 									<option>Large</option>
 									<option>small</option>
-								</select></li>
+								</select></li> 
 								 <li>Số lượng:<select>
 									<option>1</option>
 									<option>2</option>
@@ -94,7 +92,16 @@
 									<option>5</option>
 								</select></li> 
 							</ul>
-						</div> -->
+						</div>  -->
+						<div class="add-cart">
+						
+					<?php
+						// if(isset($AddtoCart)){
+						// 	echo '<span style="color:red; font-size:18px;"> '.$AddtoCart.'</span>';
+						// }
+
+						 ?>			
+				</div>
 							<p><?php echo $r["mota"]; }?></p>
 							
 								<!-- <a href="#" class="hvr-shutter-in-vertical ">More details</a> -->

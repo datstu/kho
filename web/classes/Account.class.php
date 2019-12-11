@@ -6,12 +6,7 @@ class Account extends DB{
 	}
 	
 	public function login($u,$p){
-			$sql="select * from quantri where username=? and matkhau=?";
-			$arr = array($u, md5($p));
-				$_SESSION['login'] = $this->exeQuery($sql,$arr);
-			//return $this->exeQuery($sql,$arr);
-			return $_SESSION;	
-
+		
 
 	}
 

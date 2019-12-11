@@ -1,9 +1,11 @@
 <?php
 if (!isset($_SESSION)) session_start();
-if (!isset($_SESSION['login']))
-{
-	header('location:login.html');
-}
+// if (!isset($_SESSION['login']))
+// {
+// 	//header('location:login.html');
+// }
+ // if (isset($_SESSION))
+ // session_destroy();
 ?>
 <?php
 include "config/config.php";
@@ -11,7 +13,7 @@ include ROOT."/inc/function.php";
 // if (!isset($_SESSION)) session_start();
  spl_autoload_register("loadClass");
 // $db= new Db();
-//$cart = new Cart();
+$cart = new Cart();
 
 ?>
 

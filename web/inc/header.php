@@ -10,23 +10,24 @@
 							<!-- <li  ><a href="wishlist.html">WISH LIST (0)</a> </li> -->
 							<li  >
 							<?php 
-						if (isset($_SESSION['login']))
+						if (!isset($_SESSION['login']))
 							{
-								//echo $_SESSION['login']['hoten'];
-								echo "<pre>";
-							  print_r($_SESSION);
-								echo "<a href='logout.php'>Thoat</a>";
-							}
-							else{ ?>
+								?>
 							<a href="login.html"> 
 								
 							 Tài Khoản
 							 </a>
-							<?php } ?>
+							<?php 
+								} else{ 
+								
+								echo "<a href='#'>Hi,".$_SESSION['login']['hoten']."</a>";
+								?>
+								<a href='logout.php'>Thoat</a>
+							<?php }?> 
 							 </li>
 
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
-							<li > <a href="checkout.html" >Giỏ Hàng</a> </li>	
+							<li > <a href="index.php?mod=cart" >Giỏ Hàng</a> </li>	
 							<li><div class="cart">
 									<a href="#" class="cart-in"> </a>
 									<span> 0</span>
