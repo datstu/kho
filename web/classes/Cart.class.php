@@ -87,7 +87,7 @@ class Cart extends Book{
 		{	echo "Giỏ hàng rỗng";
 			return;
 		}
-		echo "<table  border=\"1\"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Số lượng</td></tr>";
+		echo '<table  border="10"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Số lượng</td></tr>';
 		foreach($this->_cart as $id=>$quantity)
 		{
 			
@@ -97,10 +97,12 @@ class Cart extends Book{
 				echo "<tr>
 				
 				<td>
-				".'<img src="images/book/'.$r["hinh"].'" alt="'.$r["hinh"].'">'.'</td>
-				<td>'.$r["tensach"]."</td>
-				<td>$quantity</td>
-				</tr>";
+				".'<img height="200px" src="images/book/'.$r["hinh"].'" alt="'.$r["hinh"].'">'.'</td>
+				<td >'.$r["tensach"].'</td>
+				<td>'.$quantity.'</td>
+				 <td><a href="" >Delete </a>'."\n".'<a href="" >Update </a>'.' 
+				 </td>      
+				</tr>';
 			}
 				
 		}
