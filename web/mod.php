@@ -7,5 +7,7 @@ if ($mod=="account")
 	include "module/account/index.php";
 if ($mod=="cart")
 	include "module/cart/index.php";
+if ($mod=="order")
+	include "module/order/index.php";
 	
 ?>

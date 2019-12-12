@@ -16,6 +16,25 @@ table{border-collapse:collapse;border-spacing:0; }
     border:1px solid black;
     text-align: center;
 }
+/*css nut mua hàng*/
+#mua-hang{
+    height: 50px;  
+    display: inline-block;
+    background: #fb5e33;
+    padding: 10px;
+  
+    margin-left: 45%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+#mua-hang:hover{
+   
+    background: yellow;
+    
+    color: #d4ccb0;
+    cursor: pointer;
+}
 td{
   width: 50%;
     padding: 15px;

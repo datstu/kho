@@ -7,7 +7,16 @@ if ($ac=="add")
 	$id = getIndex("id");
 	$cart->add($id, $quantity);
 }
+if ($ac=="del")
+{
+	include ROOT."/module/cart/del.php";
+}
+if ($ac=="home")
+{
+	include ROOT."/module/cart/home.php";
+}
+
 //Biến $cart được tạo từ trang chủ index.php
- $cart->show();
+
   
 

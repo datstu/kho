@@ -59,7 +59,7 @@
 					<?php 
 					$num = isset($_POST['number'])?$_POST['number']:0;
 					$cart->add($masp, $num);
-					echo $r["masach"];
+					
 					 ?>
 				<!-- 	<a href="index.php?mod=cart&id=<?php  echo $r["masach"]."&number=$num"; ?>&ac=add" class="hvr-shutter-in-vertical cart-to">THÊM VÀO GIỎ</a> -->
 

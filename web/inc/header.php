@@ -27,7 +27,7 @@
 							 </li>
 
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
-							<li > <a href="index.php?mod=cart" >Giỏ Hàng</a> </li>	
+							<li > <a href="index.php?mod=cart&ac=home" >Giỏ Hàng</a> </li>	
 							<li><div class="cart">
 									<a href="#" class="cart-in"> </a>
 									<span> 0</span>
