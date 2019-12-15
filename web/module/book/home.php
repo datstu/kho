@@ -1,5 +1,21 @@
 
 <div class="content">
+	<?php
+	// $query = "SELECT * from khachhang where email='d12c1@gmail.com'";
+		
+
+
+
+	// 	$temp = new Db();
+	// 	$list =$temp->exeQuery($query);
+	// 	foreach ($list as $key => $r) {
+	// 		echo "<pre>";
+	// 		print_r($r);
+	// 	}
+	 	// $ngaynhan = date("Y-m-d H:i:s", strtotime("+1 week")) ;
+			// echo $ngaynhan;
+	 ?>
+	
 				<div class="content-top">
 					<h3 class="future">Sản phẩm nổi bật</h3>
 					<div class="content-top-in">

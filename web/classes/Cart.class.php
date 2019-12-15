@@ -72,6 +72,7 @@ class Cart extends Book{
 		//Update số lượng item của cart trong header.php. Có thể không sử dụng method này nếu mỗi lần thêm xong, chuyển trang về mod=cart.
 		
 	}
+	
 	public function bookExist($book_id)
 	{
 		$sql="select * from sach where masach = '$book_id' ";
@@ -87,6 +88,23 @@ class Cart extends Book{
 	{
 		echo "<script language=javascript> document.getElementById('$id').innerHTML =$quantity; </script>";
 	}
+	
 
+	public function add_chitietHD($mahd,$masach,$soluong,$gia)
+	{
+		$sql="INSERT INTO chitiethd (mahd,masach,soluong,gia) 
+		VALUES('$mahd','$masach','$soluong','$gia')";
+		
+		return $this->exeNoneQuery($sql);	
+	}
+	public function mahd_Exist($mahd)
+	{
+		$sql="select * from khachhang where email = '$mahd' ";
+		$temp = new Db();
+		$temp->exeQuery($sql);
+		if ($temp->getRowCount()==0) return false;
+		return true;
+	}
 }
 ?>
+

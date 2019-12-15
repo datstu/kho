@@ -1,13 +1,41 @@
 <?php 
 class CartDetail extends DB{
-	public function getDetail($n){
-		$sql="select masach, tensach,gia, hinh from sach order by rand() limit 0, $n ";
-		return $this->exeQuery($sql);	
-	}
 	
-	public function getDetail($n){
-		$sql="select * from chitiethd where mahd='$n'  ";
-		return $this->exeQuery($sql);	
+	public function insert_Cart($mahd,$a){
+
+			 	
+		foreach ($a as $key => $value) {
+			// 		echo "<br><pre>";
+			// print_r($value);
+			
+			
+			
+			  $b = new Book();
+		  $getBook = $b-> getDetail($key);
+				  foreach ($getBook as $k => $r) {
+
+				 			$gia = $r["gia"] *$value;
+				  }
+			 	
+
+				  	//echo "<br>".$mahd.'/'.$key.'/'.$value.'/'.$gia;
+
+
+					 $sql = "INSERT INTO  chitiethd (mahd,masach,soluong,gia)
+					  VALUES ('$mahd','$key','$value','$gia')";
+					   $this->exeNoneQuery($sql);
+					 
+				}
+		
+		// $sql = " INSERT INTO  chitiethd (mahd,masach,soluong,gia)
+		// 							 VALUES ('48','td02','3','1000')";
+		// 			  return $this->exeNoneQuery($sql);
 	}
+
 }
+				// INSERT INTO  chitiethd (mahd,masach,soluong,gia)
+				// 					 VALUES ('42','td02','3','1000')
+	
+	
+
 ?>
