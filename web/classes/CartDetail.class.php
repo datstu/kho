@@ -1,5 +1,6 @@
 <?php 
 class CartDetail extends DB{
+	private $tong=0;
 	
 	public function insert_Cart($mahd,$a){
 
@@ -15,6 +16,8 @@ class CartDetail extends DB{
 				  foreach ($getBook as $k => $r) {
 
 				 			$gia = $r["gia"] *$value;
+				 			$this->tong+=$gia;
+
 				  }
 			 	
 
@@ -31,10 +34,13 @@ class CartDetail extends DB{
 		// 							 VALUES ('48','td02','3','1000')";
 		// 			  return $this->exeNoneQuery($sql);
 	}
+	public function tongGia(){
+		 return $this->tong;
+
+	}
 
 }
-				// INSERT INTO  chitiethd (mahd,masach,soluong,gia)
-				// 					 VALUES ('42','td02','3','1000')
+			
 	
 	
 

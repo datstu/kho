@@ -1,5 +1,5 @@
 <?php
-class Cart extends Book{
+class Cart extends Db{
 	private $_cart;
 	private $_num_item =0;
 	public function  __construct()
@@ -27,13 +27,15 @@ class Cart extends Book{
 	{	
 		if ($id=="" || $quantity<1) return;
 		if (!$this->bookExist($id)) return;
-		print_r($this->_cart);		
+			
 		if (isset($this->_cart[$id]))
 			$this->_cart[$id]+=	$quantity;
 		else $this->_cart[$id]=	$quantity;
 		$_SESSION["cart"] = $this->_cart;	
 		$this->_num_item = array_sum($this->_cart);
+		print_r($this->_cart);	
 		echo "Da them $id - $quantity ";
+
 		echo "<script language=javascript>window.location='index.php?mod=cart&ac=home';</script>";//Chuyển trình duyệt web tới trang hiển thị cart
 	}
 	

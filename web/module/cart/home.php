@@ -1,6 +1,7 @@
-<?php 
-	
-	$b = new Book();
+<?php
+
+ 
+		$b = new Book();
 
 	$quantity = postIndex("number");
 	$d = postIndex("D");
@@ -13,6 +14,8 @@
 	$edit = $cart->edit($d, $quantity);
 }
 	$c = $cart->show();
+
+	
 	
 
 	$s=0;
@@ -72,5 +75,12 @@
 		?></div>
 		<a href="index.php?mod=order&ac=home"><div id="mua-hang">Mua Hàng</div></a>
 
-	<?php } ?>
+	<?php } 
+	if (!isset($_SESSION)) session_start();
+	$u = isset($_SESSION["user"])?$_SESSION["user"]:"";
+  	
+	?>
+	<div><a href="index.php?mod=order&ac=show&us=<?php echo $u; ?> ">Xem đơn hàng của bạn</a></div>
+	
+
 		

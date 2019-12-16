@@ -1,76 +1,34 @@
-
+<?php if (!isset($_SESSION)) session_start();
+$email =postIndex("email");
+ if(!isset($_SESSION['user']) || $_SESSION['user']=='')
+ 	{
+		
+		
+		$_SESSION['user']= $email;
+	
+	}else {
+		$_SESSION['user']= $email;
+	} ?>
 <style>
-	.box_left {
-    
-    float: left;
-    width: 48%;
-    padding: 4px;
-}
-	.box_right {
-    
-    float: right;
-    width: 45%;
-    padding: 4px;
-}
-.tblone {
-  border: 1px solid #fff;
-  margin-bottom: 12px;
-  width: 100%;
-}
-.tblone th {
-  background: #1d71ab  none repeat scroll 0 0;
-  color: #fff;
-  font-size: 20px;
-  padding: 5px 8px;
-  text-align: center;
-}
-.tblone td{padding:10px;text-align:center;}
-
-table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
-table.tblone tr:nth-child(2n){background:#f6f5f5;height:30px;}
-table.tblone input[type="number"] {
-  border: 1px solid #ddd;
-  padding: 2px;
-  width: 60px;
-}
-table.tblone input[type="submit"] {
-  background: #333 none repeat scroll 0 0;
-  border: 1px solid #000;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 1px 5px;
-}
-table.tblone a {
-  color: #fe5800;
-  font-weight: bold;
-  text-decoration: none;
-}
-table.tblone a:hover{color: #000;}
-table.tblone img {
-    height: 70px;
-    width: 80px;
-}
+	
 .dathang{
-	 background: #fb5e33;
-    /* margin-left: 74%; */
+   background: #fb5e33;
+    margin-top: 10px;
     padding: 5px;
-    /* height: 120px; */
-    /* line-height: 67px; */
+    
     font-size: 40px;
     text-align: center;
 }
 .dathang a{
-	display: block;
-	color: black;
+  display: block;
+  color: black;
 
 }
 .dathang a:hover{
-	text-decoration: none;
-	font-style: italic;
+  text-decoration: none;
+/* background: #4b4b4b;*/
+  color: blue;
 }
-
 </style>
 
 
@@ -160,6 +118,9 @@ $c = $cart->show();
 					else echo "Fails THem";
 						}
 					}
+					echo $email;
+
+
 
 			}
 			
@@ -210,8 +171,7 @@ $c = $cart->show();
 	
 	<?php 
 
-	// echo $idsp."<br>".$num;
-
+	
 	if($email != ''){ ?>
 		<div class="dathang">
 		<a href="index.php?mod=order&ac=add&id_accout=<?php echo $email;?>&<?php echo $a; ?>">Đặt Hàng</a></div>

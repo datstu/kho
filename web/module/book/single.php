@@ -58,6 +58,7 @@
 					</form>
 					<?php 
 					$num = isset($_POST['number'])?$_POST['number']:0;
+
 					$cart->add($masp, $num);
 					
 					 ?>

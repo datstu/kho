@@ -27,7 +27,23 @@
 							 </li>
 
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
-							<li > <a href="index.php?mod=cart&ac=home" >Giỏ Hàng</a> </li>	
+							<li > 
+								<?php
+							//$em = isset($_GET['email'])?$_GET['email']:'';
+							
+							// if (isset($_SESSION['user']))
+							//  {
+							 	
+							 	
+							//   }
+							  //else unset($_SESSION['user']);
+							
+							 
+							  
+						
+								 ?>
+								<a href="index.php?mod=cart&ac=home" >
+							Giỏ Hàng</a> </li>	
 							<li><div class="cart">
 									<a href="#" class="cart-in"> </a>
 									<span> 0</span>

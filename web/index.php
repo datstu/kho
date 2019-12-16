@@ -1,11 +1,32 @@
 <?php
-if (!isset($_SESSION)) session_start();
-// if (!isset($_SESSION['login']))
-// {
-// 	//header('location:login.html');
-// }
- // if (isset($_SESSION))
- // session_destroy();
+ if (!isset($_SESSION)) session_start();
+ //unset($_SESSION['user']);
+// if (!isset($_SESSION['user']))
+//  {
+//  	$us = postIndex("email");
+//  	$_SESSION['user']=$us;
+//  }
+//   if (isset($_SESSION))
+//   $u =  $_SESSION['user'];
+ // 
+ // if (!isset($_SESSION)) session_start();
+// $us = postIndex("email");
+
+// echo $us;
+	// 	if(isset($_SESSION['user']))
+	// 		{
+	// 			if($_SESSION['user'] !='')
+				
+	// 			$e = $_SESSION['user'];
+	// 		}
+	// 		else { $_SESSION['user']=$us;
+	// 		$e = $_SESSION['user'];
+	// 		}
+
+ print_r($_SESSION);
+	
+	// print_r($_SESSION);
+	//echo $e;
 ?>
 <?php
 include "config/config.php";
@@ -14,6 +35,7 @@ include ROOT."/inc/function.php";
  spl_autoload_register("loadClass");
 // $db= new Db();
 $cart = new Cart();
+$o = new Order();
 
 ?>
 
