@@ -59,7 +59,9 @@ class Db{
 		public function countItems($sql, $arr= array())
 		{
 			$data = $this->exeQuery($sql, $arr, PDO::FETCH_BOTH);
+			//print_r($data);
 			return $data[0][0];
+			//return $this->exeQuery($sql, $arr, PDO::FETCH_BOTH);
 		}
 		
 	

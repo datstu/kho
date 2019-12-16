@@ -1,9 +1,21 @@
 <?php 
 class Order extends DB{
 	
-	public function formatDate($date){
-    return date('F j, Y, g:i a', strtotime($date));
- }
+	
+	public function xuLy_DH($type,$mahd)
+	{
+		$sql= "UPDATE hoadon SET 
+		 		
+		 		trangthai = $type 
+		         
+		      
+					
+					WHERE mahd = '$mahd' ";
+
+		return $this->exeNoneQuery($sql);	
+
+		
+	}
  	public function delete_order($mahd,$masach)
 	{
 		$sql= "DELETE FROM chitiethd
@@ -14,15 +26,31 @@ class Order extends DB{
 
 		
 	}
-	public function showOrder($e)
+		public function delete_order2($mahd)
 	{
+		$sql= "DELETE FROM hoadon
+					
+					WHERE mahd = '$mahd'";
+
+		return $this->exeNoneQuery($sql);	
+
+		
+	}
+	public function showOrder($e='1')
+	{
+		if($e == '1')
+			{ $s= ""; $arr = Array();}
+		else { 
+			$s= " where khachhang.email=:e";//luu y dau cach truoc chu where
+			$arr =  Array(":e"=>$e);
+		}
 		$sql="SELECT DISTINCT hoadon.*,chitiethd.*, sach.tensach,sach.mota,
 		sach.hinh
 		from khachhang JOIN  hoadon on  hoadon.email = khachhang.email
 		 JOIN chitiethd on  chitiethd.mahd= hoadon.mahd 
-		 JOIN sach on sach.masach = chitiethd.masach
-		  where khachhang.email=:e ";
-		$arr =  Array(":e"=>$e);
+		 JOIN sach on sach.masach = chitiethd.masach".$s;// xuat thong tin theo email nhan vao, neu khong co nhan dau vao thi hien thi tat ca
+		  
+		
 		return $this->exeQuery($sql,$arr);
 
 		

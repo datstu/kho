@@ -43,6 +43,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 					$e = getIndex("us");
 				     
 					}
+					//echo $e;
 
 					$hienThi_DH = $o ->showOrder($e);
 					echo("<pre>");
@@ -60,7 +61,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 								<td><img src="images/book/<?php echo $r["hinh"]; ?>" alt="<?php echo $r["hinh"]; ?>" width="100px"/></td>
 								<td><?php echo number_format($r["gia"])." VNĐ";?></td>
 								<td><?php echo $r["soluong"] ?></td>
-								<td><?php  echo $o->formatDate($r["ngaydat"]);?></td>
+								<td><?php  echo formatDate($r["ngaydat"]);?></td>
 								<td><?php if($r["trangthai"] ==0)
 								{
 									echo 'Đang xử lý';
@@ -73,7 +74,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 								 
 								 	<?php
 								 	//chỉ được phép xóa khi đơn hàng đã được xử lý
-								if($r["trangthai"] ==0){
+								if($r["trangthai"] != 2){ //2:trang thai da xu ly
 									echo "N/A";
 
 								}else {?>

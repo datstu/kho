@@ -21,3 +21,6 @@ function requestIndex($index, $value='')
 	$data = isset($_REQUEST[$index])? $_REQUEST[$index]:$value;
 	return $data;
 }
+ function formatDate($date){
+    return date('F j, Y, g:i a', strtotime($date));
+ }
