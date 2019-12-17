@@ -113,9 +113,9 @@ print_r($_SESSION);
 					Quản lý sản phẩm
 		      </a>
 					<ul>
-						<li><a class="<?php echo $classCat;?>" href="index.php?mod=book&group=cat">Loại sách</a></li>
-						<li><a  class="<?php echo $classPub;?>"  href="index.php?mod=book&group=pub">Nhà xuất bản</a></li> <!-- Add class "current" to sub menu items also -->
-						<li><a  class="<?php echo $classBook;?>"  href="index.php?mod=book">Sách</a></li>
+						<li><a class="<?php echo $classCat;?>" href="index.php?mod=book&group=cat">Loại</a></li>
+						<li><a  class="<?php echo $classPub;?>"  href="index.php?mod=book&group=pub">Nhà cung cấp</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a  class="<?php echo $classBook;?>"  href="index.php?mod=book">Sản phẩm</a></li>
 						<li><a href="#">Khác</a></li>
 					</ul>
 				</li>
@@ -125,7 +125,7 @@ print_r($_SESSION);
 						Đơn hàng
 					</a>
 					<ul>
-						<li><a class="<?php echo $classOrder;?>" href="index.php?mod=order&group=order">Danh sách đơn hàng</a></li>
+						<li><a class="<?php echo $classOrder;?>" href="index.php?mod=order&group=order">Danh Sản phẩm đơn hàng</a></li>
 					<!-- 	<li><a href="#">Đơn hàng đang xử lý</a></li> -->
 					</ul> 
 				</li>
@@ -135,7 +135,7 @@ print_r($_SESSION);
 						Quản lý tin tức
 					</a>
 					<ul>
-						<li><a href="index.php?mod=news">Danh sách tin tức</a></li>
+						<li><a href="index.php?mod=news">Danh Sản phẩm tin tức</a></li>
 						<li><a href="index.php?mod=news&ac=Add">Thêm tin mới</a></li>
 						<li><a href="#">Tin có mình luận mới</a></li>
 						<li><a href="#">....</a></li>

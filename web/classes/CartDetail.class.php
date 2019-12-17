@@ -18,19 +18,19 @@ class CartDetail extends DB{
 				 			$gia = $r["gia"] *$value;
 				 			$this->tong+=$gia;
 
+					 $sql = "INSERT INTO  chitiethd (mahd,masp,soluong,gia)
+					  VALUES ('$mahd','$key','$value','$gia')";
+					    $this->exeNoneQuery($sql);
 				  }
 			 	
 
-				  	//echo "<br>".$mahd.'/'.$key.'/'.$value.'/'.$gia;
 
 
-					 $sql = "INSERT INTO  chitiethd (mahd,masach,soluong,gia)
-					  VALUES ('$mahd','$key','$value','$gia')";
-					   $this->exeNoneQuery($sql);
+					 
 					 
 				}
 		
-		// $sql = " INSERT INTO  chitiethd (mahd,masach,soluong,gia)
+		// $sql = " INSERT INTO  chitiethd (mahd,masp,soluong,gia)
 		// 							 VALUES ('48','td02','3','1000')";
 		// 			  return $this->exeNoneQuery($sql);
 	}

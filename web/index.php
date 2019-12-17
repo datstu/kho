@@ -23,7 +23,7 @@
 	// 		$e = $_SESSION['user'];
 	// 		}
 
- print_r($_SESSION);
+// print_r($_SESSION);
 	
 	// print_r($_SESSION);
 	//echo $e;

@@ -6,8 +6,8 @@ $id = postIndex("id");
 
 $mahd = getIndex('mahd');
 
-;
-echo $mahd.'/';
+
+
 
 
 $del = $order -> delete_order2($mahd);
@@ -54,7 +54,7 @@ $del = $order -> delete_order2($mahd);
 				
 					//print_r($r);
 					$mahd= $r["mahd"];
-					$masach = $r["masach"];
+					$masp = $r["masp"];
 					
 			      $a["$i"] = $mahd;
 			      
@@ -65,7 +65,7 @@ $del = $order -> delete_order2($mahd);
  ?>
 							<tr>
 								<td><?php echo $r["mahd"]; ?></td>
-								<td><?php echo $r["tensach"];?></td>
+								<td><?php echo $r["tensp"];?></td>
 								
 								<td><?php echo number_format($r["gia"])." VNĐ";?></td>
 								<td><?php echo $r["soluong"] ?></td>
@@ -142,6 +142,7 @@ $del = $order -> delete_order2($mahd);
 									
 									<input type="submit" value="Cập nhật" name="sm">
 					</form> 
+					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">Xóa </a>
 					   <?php 
 						//while ( $a[$i] != $a[$i--]);
 							 
@@ -198,7 +199,7 @@ $del = $order -> delete_order2($mahd);
 									
 									<input type="submit" value="Cập nhật" name="sm">
 					</form> 
-					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $mahd; ?>&masach=<?php echo $masach; ?>&us=<?php  echo $r["email"]?>">Xóa </a>
+					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">Xóa </a>
 							<?php
 							$i++;$y++;
 						}

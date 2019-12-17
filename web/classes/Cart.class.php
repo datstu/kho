@@ -77,7 +77,7 @@ class Cart extends Db{
 	
 	public function bookExist($book_id)
 	{
-		$sql="select * from sach where masach = '$book_id' ";
+		$sql="select * from sach where masp = '$book_id' ";
 		$temp = new Db();
 		$temp->exeQuery($sql);
 		if ($temp->getRowCount()==0) return false;
@@ -92,10 +92,10 @@ class Cart extends Db{
 	}
 	
 
-	public function add_chitietHD($mahd,$masach,$soluong,$gia)
+	public function add_chitietHD($mahd,$masp,$soluong,$gia)
 	{
-		$sql="INSERT INTO chitiethd (mahd,masach,soluong,gia) 
-		VALUES('$mahd','$masach','$soluong','$gia')";
+		$sql="INSERT INTO chitiethd (mahd,masp,soluong,gia) 
+		VALUES('$mahd','$masp','$soluong','$gia')";
 		
 		return $this->exeNoneQuery($sql);	
 	}

@@ -5,7 +5,7 @@ class Book extends DB{
 	private $_page_count;
 	
 	public function getRand($n){
-		$sql="select masach, tensach,gia, hinh from sach order by rand() limit 0, $n ";
+		$sql="select masp, tensp,gia, hinh from sach order by rand() limit 0, $n ";
 		return $this->exeQuery($sql);	
 	}
 	
@@ -26,7 +26,7 @@ class Book extends DB{
 	}
 	
 	public function getDetail($n){
-		$sql="select * from sach where masach='$n'  ";
+		$sql="select * from sach where masp='$n'  ";
 		return $this->exeQuery($sql);	
 	}
 	
@@ -38,24 +38,24 @@ class Book extends DB{
 		 		FROM
 	 		loai
 		 		INNER JOIN sach ON sach.maloai = loai.maloai
-		 		INNER JOIN nhaxb ON sach.manxb = nhaxb.manxb";
+		 		INNER JOIN nhaxb ON sach.mancc = nhaxb.mancc";
 				$n  = $this->count($sql1);
 				//echo $n;
 				$this->_page_count = ceil($n/$this->_page_size);
 		$sql="SELECT
-				sach.masach,
-				sach.tensach,
+				sach.masp,
+				sach.tensp,
 				sach.mota,
 				sach.gia,
 				sach.hinh,
-				sach.manxb,
+				sach.mancc,
 				sach.maloai,
 				loai.tenloai,
-				nhaxb.tennxb
+				nhaxb.tenncc
 				FROM
 				loai
 				INNER JOIN sach ON sach.maloai = loai.maloai
-				INNER JOIN nhaxb ON sach.manxb = nhaxb.manxb
+				INNER JOIN nhaxb ON sach.mancc = nhaxb.mancc
 				limit $offset, " . $this->_page_size;
 		
 		return $this->exeQuery($sql);

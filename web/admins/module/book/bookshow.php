@@ -21,10 +21,10 @@ $page_count = $book->getPageCount();
 							<thead>
 								<tr>
 								   <th><input class="check-all" type="checkbox" /></th>
-								   <th>Tên sách</th>
+								   <th>Tên Hàng</th>
 								   <th>Giá</th>
 								   <th>Loại</th>
-								   <th>Nhà XB</th>
+								   <th>Nhà Cung Cấp</th>
 								   <th>Column 5</th>
 								</tr>
 								
@@ -66,15 +66,15 @@ $page_count = $book->getPageCount();
 							{?>
 								<tr>
 									<td><input type="checkbox" /></td>
-								<td><a href="#" title="title"><?php echo $r["tensach"];?>
+								<td><a href="#" title="title"><?php echo $r["tensp"];?>
                                     </a></td>
                                     <td><?php echo number_format($r["gia"]);?> VND</td>
 									<td><?php echo $r["tenloai"];?></td>
-									<td><?php echo $r["tennxb"];?></td>
+									<td><?php echo $r["tenncc"];?></td>
 									<td>
 										<!-- Icons -->
-										 <a href="index.php?mod=book&ac=edit&id=<?php echo $r["masach"];?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>&nbsp;&nbsp;
-										 <a href="index.php?mod=book&ac=delete&id=<?php echo $r["masach"];?>" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+										 <a href="index.php?mod=book&ac=edit&id=<?php echo $r["masp"];?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>&nbsp;&nbsp;
+										 <a href="index.php?mod=book&ac=delete&id=<?php echo $r["masp"];?>" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 										
 									</td>
 								</tr>

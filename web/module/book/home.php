@@ -12,19 +12,19 @@
 							
 							<div class="col-md">
 								
-						<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>">
+						<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masp"]; ?>">
 
 									<img style="height: 157px;" src="images/book/<?php echo $r["hinh"]; ?>" alt="" />
 								</a>	
 								<div class="top-content">
-									<h5><a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>">
+									<h5><a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masp"]; ?>">
 										<?php
-										echo $r["tensach"];
+										echo $r["tensp"];
 										
 										 ?>
 									</a></h5>
 									<div class="white">
-				<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Xem Chi Tiết</a>
+				<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masp"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Xem Chi Tiết</a>
 										<p class="dollar">
 											<span class="in-dollar"><?php echo number_format($r["gia"]); ?></span></p>
 										<div class="clearfix"></div>
@@ -96,15 +96,15 @@
 								?>
 								
 						<li><div class="col-md men">
-								<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masach"]; ?>" class="compare-in ">
+								<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masp"]; ?>" class="compare-in ">
 									<img style="height: 284px;" src="images/book/<?php echo $r["hinh"]; ?>" alt="" />
 								<div class="compare in-compare">
 									<span>Xem chi tiết</span>
 								</div></a>
 								<div class="top-content bag">
-									<h5><a href="single.php?idsp=<?php echo $r["masach"] ?>"><?php echo $r["tensach"] ?></a></h5>
+									<h5><a href="single.php?idsp=<?php echo $r["masp"] ?>"><?php echo $r["tensp"] ?></a></h5>
 									<div class="white">
-										<a href="index.php?mod=cart&ac=home&idsp=<?php echo $r["masach"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ </a>
+										<a href="index.php?mod=cart&ac=home&idsp=<?php echo $r["masp"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ </a>
 										<p class="dollar"><span class="in-dollar"><?php echo $r["gia"] ?>đ</span></p>
 										<div class="clearfix"></div>
 									</div>

@@ -39,7 +39,7 @@
 								?>
 					<div class="col-md-7 single-top-in">
 						<div class="single-para">
-							<h4><?php echo $r["tensach"]; ?></h4>
+							<h4><?php echo $r["tensp"]; ?></h4>
 							<div class="para-grid">
 								<span  class="add-to"><?php echo $r["gia"]; ?>đ</span>
 								<!-- bat dau	login -->

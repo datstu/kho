@@ -44,7 +44,7 @@
 		<tr>
 				
 				<td><img height="200px" src="images/book/<?php echo $r["hinh"] ;?>" alt="<?php echo $r["hinh"] ?>"></td>
-				<td ><?php echo $r["tensach"]; ?></td>
+				<td ><?php echo $r["tensp"]; ?></td>
 				<td ><?php echo number_format($r["gia"]); ?></td>
 				<td> <form action="" method="post">
 

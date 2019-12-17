@@ -16,11 +16,11 @@ class Order extends DB{
 
 		
 	}
- 	public function delete_order($mahd,$masach)
+ 	public function delete_order($mahd,$masp)
 	{
 		$sql= "DELETE FROM chitiethd
 					
-					WHERE mahd = '$mahd' AND masach='$masach'";
+					WHERE mahd = '$mahd' AND masp='$masp'";
 
 		return $this->exeNoneQuery($sql);	
 
@@ -44,11 +44,11 @@ class Order extends DB{
 			$s= " where khachhang.email=:e";//luu y dau cach truoc chu where
 			$arr =  Array(":e"=>$e);
 		}
-		$sql="SELECT DISTINCT hoadon.*,chitiethd.*, sach.tensach,sach.mota,
+		$sql="SELECT DISTINCT hoadon.*,chitiethd.*, sach.tensp,sach.mota,
 		sach.hinh
 		from khachhang JOIN  hoadon on  hoadon.email = khachhang.email
 		 JOIN chitiethd on  chitiethd.mahd= hoadon.mahd 
-		 JOIN sach on sach.masach = chitiethd.masach".$s;// xuat thong tin theo email nhan vao, neu khong co nhan dau vao thi hien thi tat ca
+		 JOIN sach on sach.masp = chitiethd.masp".$s;// xuat thong tin theo email nhan vao, neu khong co nhan dau vao thi hien thi tat ca
 		  
 		
 		return $this->exeQuery($sql,$arr);

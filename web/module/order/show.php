@@ -53,19 +53,21 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 					$i++;
 					//print_r($r);
 					$mahd= $r["mahd"];
-					$masach = $r["masach"];
+					$masp = $r["masp"];
  ?>
 							<tr>
 								<td><?php echo $i; ?></td>
-								<td><?php echo $r["tensach"];?></td>
+								<td><?php echo $r["tensp"];?></td>
 								<td><img src="images/book/<?php echo $r["hinh"]; ?>" alt="<?php echo $r["hinh"]; ?>" width="100px"/></td>
 								<td><?php echo number_format($r["gia"])." VNĐ";?></td>
 								<td><?php echo $r["soluong"] ?></td>
 								<td><?php  echo formatDate($r["ngaydat"]);?></td>
-								<td><?php if($r["trangthai"] ==0)
+								<td><?php if($r["trangthai"] ==0 || $r["trangthai"] ==1)
 								{
 									echo 'Đang xử lý';
-								}else echo 'Đã xử lý';
+								}else if($r["trangthai"] ==3)
+								       echo 'Hủy';
+								    else echo 'Đã xử lý';
 								
 								?>
 								</td>
@@ -74,11 +76,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 								 
 								 	<?php
 								 	//chỉ được phép xóa khi đơn hàng đã được xử lý
-								if($r["trangthai"] != 2){ //2:trang thai da xu ly
+								if($r["trangthai"] < 2  ){ //2:trang thai da xu ly
 									echo "N/A";
 
 								}else {?>
-									<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&ac=del&mahd=<?php echo $mahd; ?>&masach=<?php echo $masach; ?>&us=<?php  echo $r["email"]?>">
+									<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&ac=del&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">
 									
 									Xóa
 								</a>

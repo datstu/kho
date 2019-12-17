@@ -65,7 +65,7 @@ $c = $cart->show();
 		<tr>
 				
 				<td> <?php echo $i; ?></td>
-				<td  ><?php echo $r["tensach"]; ?></td>
+				<td  ><?php echo $r["tensp"]; ?></td>
 				<td ><?php echo number_format($r["gia"]); ?></td>
 				<td > <?php echo $quantity; ?>  </td>
 						<td ><?php $tong = $r["gia"]*$quantity;
