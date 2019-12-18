@@ -20,6 +20,10 @@ $del = $order -> delete_order2($mahd);
 	
 
 //echo "<pre>";
+
+	$r5 = $order ->TongDon('184');
+
+					
  ?>
 
 
@@ -31,9 +35,9 @@ $del = $order -> delete_order2($mahd);
 		
 							<tr>
 								<th width="10%">Mã Hóa Đơn</th>
-								<th width="30%">Tên sản phẩm</th>
 								
-								<th width="10%">Giá</th>
+								
+								<th width="10%">Tổng</th>
 								<th width="10%">Số lượng</th>
 								<th width="10%">Ngày</th>
 								
@@ -44,33 +48,29 @@ $del = $order -> delete_order2($mahd);
 							<?php
 						
 
-					$hienThi_DH = $order ->showOrder();
-					
+					$hienThi_DH = $order ->showOrder_admin();
+					//echo "<pre>";
+					$a = $hienThi_DH;
 					//print_r($hienThi_DH);
-					$i = 1;
-					$y = 0;
-					$flag = false;
+				
 					foreach ($hienThi_DH as $k => $r) {
 				
-					//print_r($r);
-					$mahd= $r["mahd"];
-					$masp = $r["masp"];
-					
-			      $a["$i"] = $mahd;
-			      
+				
+			     
+			      $x = $r["mahd"];
 			      
 					
+					//print_r($hienThi);
 			
 					
  ?>
 							<tr>
 								<td><?php echo $r["mahd"]; ?></td>
-								<td><?php echo $r["tensp"];?></td>
+								<td> <?php echo ($order ->TongDon($x)); ?></td>
+								<td> <?php echo ($order ->TongSL($x)); ?> </td>
 								
-								<td><?php echo number_format($r["gia"])." VNĐ";?></td>
-								<td><?php echo $r["soluong"] ?></td>
 								<td><?php  echo formatDate($r["ngaydat"]);?></td>
-								<td><a href="index.php?mod=acc&idKH=<?php echo $r["email"] ;?>">Hiển thị</a></td>
+			<td><a href="index.php?mod=acc&idKH=<?php echo $r["email"] ;?>&mahd=<?php echo $r["mahd"];  ?>">Hiển thị</a></td>
 								
 					
 					<td>
@@ -79,13 +79,7 @@ $del = $order -> delete_order2($mahd);
 							bat dau xu ly lap don hang:
 							- chi hien thi lua chon cap nhat cho 1 lan duy nhat de cap nhat tat ca cac mat hang cung ma don hang
 							- neu khac ma don hang thi hien thi binh thuong  -->
-					<?php
-
-					if(!$flag){
-						$flag =true ;
-						$i++; $y++;
-
-						?>
+					
 						<form action="index.php?mod=order" method="post"> 
 
 							 <select id="select" name="type">
@@ -128,92 +122,21 @@ $del = $order -> delete_order2($mahd);
                        
                        
 
-                        <?php  } ?> ?>
+                        <?php  } ?> 
                           
                             
      
-                        </select>
-								 	
-							
-								 </td>
-								
-								<td>
-									<input type="hidden" name="id" value="<?php echo $r["mahd"];  ?>">
-									
-									<input type="submit" value="Cập nhật" name="sm">
-					</form> 
-					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">Xóa </a>
-					   <?php 
-						//while ( $a[$i] != $a[$i--]);
-							 
-						}else if($a[$i] != $a[$y]){
-							?>
-							<form action="index.php?mod=order" method="post"> 
-
-							 <select id="select" name="type">
-                            
-                            <?php 
-                            if ($r["trangthai"] == 0){
-
-                            
-                            ?>
-                        
-
-                            <option selected  value="0">Chưa xử lý</option>
-                            <option  value="1">Đang xử lý</option>
-                            <option  value="2">Đã xử lý</option>
-                            <option   value="3">Hủy</option>
-                       
-                            
-
-                        <?php }else  if ($r["trangthai"] == 1) { ?>
-                          
-                             <option  value="0">Chưa xử lý</option>
-                            <option  selected  value="1">Đang xử lý</option>
-                            <option  value="2">Đã xử lý</option>
-                            <option   value="3">Hủy</option>
-
-                        <?php  }else  if ($r["trangthai"] == 2) { ?>
-                          
-                             <option  value="0">Chưa xử lý</option>
-                            <option    value="1">Đang xử lý</option>
-                            <option  selected value="2">Đã xử lý</option>
-                            <option   value="3">Hủy</option>
-                       
-
-                        <?php  } else  if ($r["trangthai"] == 3) { ?>
-                          
-                             <option  value="0">Chưa xử lý</option>
-                            <option    value="1">Đang xử lý</option>
-                            <option   value="2">Đã xử lý</option>
-                            <option  selected value="3">Hủy</option>
-     <?php }?>
-     
-                        </select>
-								 	
-							
-								 </td>
-								
-								<td>
-									<input type="hidden" name="id" value="<?php echo $r["mahd"];  ?>">
-									
-									<input type="submit" value="Cập nhật" name="sm">
-					</form> 
-					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">Xóa </a>
-							<?php
-							$i++;$y++;
-						}
-					}
-							
-
-
-					 
-					
-					 ?>
+              </select>
 
 							</td>	
+							<td>
+									<input type="hidden" name="id" value="<?php echo $r["mahd"];  ?>">
+									
+									<input type="submit" value="Cập nhật" name="sm">
+					</form> 
+					<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&mahd=<?php echo $r["mahd"]; ?>">Xóa </a>
 
-								
+								         <?php  } ?> 
 							<!-- 	ket thuc xu ly lap don hang 
 								============================================-->
 

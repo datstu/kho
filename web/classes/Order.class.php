@@ -50,11 +50,77 @@ class Order extends DB{
 		 JOIN chitiethd on  chitiethd.mahd= hoadon.mahd 
 		 JOIN sach on sach.masp = chitiethd.masp".$s;// xuat thong tin theo email nhan vao, neu khong co nhan dau vao thi hien thi tat ca
 		  
+		  
 		
 		return $this->exeQuery($sql,$arr);
 
 		
 	}
+	
+	public function showOrder_admin()
+	{
+		// $sql="SELECT DISTINCT  hoadon.*, chitiethd.soluong,chitiethd.gia from hoadon JOIN  chitiethd on chitiethd.mahd= hoadon.mahd  ";
+		  	$sql="SELECT  * from hoadon ";
+		
+		// $a = $x;
+
+		// for($i=0; $i<count($x);$i++){
+		// 	for($k=$i+1; $k<count($x);$k++)
+
+		// 		if ($a[$i]["mahd"] == $a[$k]["mahd"]) {
+		// 			# code...
+		// 		}
+		// }
+
+		return $this->exeQuery($sql);	
+	}		
+		public function TongDon($mahd)
+	{
+		$tong = 0;
+		$sql="SELECT  * from chitiethd";
+		 
+		 
+		$a=  $this->exeQuery($sql);
+		//print_r($a);
+		foreach ($a as $key => $r) {
+			// print_r($r);
+			if($r["mahd"] == $mahd){
+				$tong += $r["gia"];
+			}
+		}
+			return $tong;
+	
+	}
+			public function TongSL($mahd)
+	{
+		$tong = 0;
+		$sql="SELECT  * from chitiethd";
+		 
+		
+		$a=  $this->exeQuery($sql);
+		//print_r($a);
+		foreach ($a as $key => $r) {
+			// print_r($r);
+			if($r["mahd"] == $mahd){
+				$tong += $r["soluong"];
+			}
+		}
+			return $tong;
+	
+	}
+
+	public function getDetail_Ord($mahd)
+	{
+	
+		$sql="SELECT  sach.*,chitiethd.* from chitiethd JOIN sach on sach.masp = chitiethd.masp
+		where chitiethd.mahd = $mahd";
+		 
+		
+		return  $this->exeQuery($sql);
+		
+	}
+
+
 		public function show_Order_desc($e) // xuat ra thang co mahd lon nhat (gan nhat)
 	{
 		$sql="SELECT * from hoadon  where email=:e ORDER BY mahd DESC LIMIT 1";

@@ -44,10 +44,10 @@
 								 ?>
 								<a href="index.php?mod=cart&ac=home" >
 							Giỏ Hàng</a> </li>	
-							<li><div class="cart">
+							<!-- <li><div class="cart">
 									<a href="#" class="cart-in"> </a>
 									<span> 0</span>
-								</div>
+								</div> -->
 								<ul class="sub-icon1 list">
 						  <h3>Recently added items(2)</h3>
 						  <div class="shopping_cart">

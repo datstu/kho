@@ -1,7 +1,7 @@
 <?php
 //$group = Utils::getIndex("group", "book");
 
-
+$c = new CartDetail();
 
 	$order = new Order();
 	$ac = Utils::getIndex("ac", "orderShow");

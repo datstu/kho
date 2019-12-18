@@ -1,11 +1,11 @@
 <?php 
 $mahd = getIndex('mahd');
-$masach = getIndex('masach');
+$masp = getIndex('masp');
 $us = getIndex('us');
 echo $mahd.'/';
-echo $masach.'/';
+echo $masp.'/';
 echo $us;
-$del = $o -> delete_order($mahd,$masach);// xoa cac chi tiet don hang đã dc xử lý
+$del = $o -> delete_order($mahd,$masp);// xoa cac chi tiet don hang đã dc xử lý
 // header('location:index.php?mod=cart&ac=home&us');
 ?>
  <script language=javascript>
