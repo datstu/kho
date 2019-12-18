@@ -50,8 +50,8 @@
 								
            <form action="" method="post">
 						
-						<input type="number" class="buyfield" name="number" value="1" min="1" />
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+						<input style="text-align: center;" type="number" class="buyfield" name="number" value="1" min="1" />
+						<input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 
 				
 						

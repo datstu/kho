@@ -24,3 +24,29 @@ function requestIndex($index, $value='')
  function formatDate($date){
     return date('F j, Y, g:i a', strtotime($date));
  }
+  function ranbuocSDT($str){
+
+  	$err =false;
+  	if($str =='')
+  		{ echo "SDT không dược bỏ trống"; 
+  		$err =true;
+  }
+  	else if(strlen($str) != 10){
+  		echo "SDT phải đúng 10 ký tự.";
+  		$err =true;
+  	}
+  	else if(!is_numeric($str)){
+  		echo "Vui lòng nhập số";
+  		$err =true;
+
+
+  	}
+    return $err;
+ }
+ function checkEmail($string)
+{  
+	if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/", $string))
+	 return true;
+	return false;	
+	
+}

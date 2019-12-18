@@ -57,8 +57,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
  ?>
 							<tr>
 								<td><?php echo $i; ?></td>
-								<td><?php echo $mahd; ?></td>
-								<td><?php echo $masp; ?></td>
 								<td><?php echo $r["tensp"];?></td>
 								<td><img src="images/book/<?php echo $r["hinh"]; ?>" alt="<?php echo $r["hinh"]; ?>" width="100px"/></td>
 								<td><?php echo number_format($r["gia"])." VNĐ";?></td>
@@ -82,7 +80,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']=='' )
 									echo "N/A";
 
 								}else {?>
-									<a onclick="return confirm('Are you want to delete?')" href="index.php?mod=order&ac=del&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">
+									<a onclick="return confirm('Bạn có muốn xóa không nè?')" href="index.php?mod=order&ac=del&mahd=<?php echo $mahd; ?>&masp=<?php echo $masp; ?>&us=<?php  echo $r["email"]?>">
 									
 									Xóa
 								</a>

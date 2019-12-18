@@ -56,7 +56,7 @@ $c = new CartDetail();
 		<h2>Đặt hàng thành công</h2>
 		<p>Tổng giá trị bạn đã mua: <?php 
 					$tong = $c ->tongGia();
-					echo $tong;
+					echo number_format($tong);
 					
 		 ?> VNĐ</p>
 		<p>Chúng tôi sẽ liên lạc với bạn sớm nhất có thể. Bạn có thể xem chi tiết đơn hàng 

@@ -27,7 +27,7 @@
 	
 		if(isset($c)){
 			 ?>
-		<table border="10"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Giá</td><td>Số lượng</td><td>Tổng</td></tr>
+		<table border="10"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Giá</td><td>Số lượng</td><td>Tổng</td><td>Hoạt Động</td></tr>
 				<?php 
 		foreach($c as $id=>$quantity)
 		{
@@ -49,7 +49,7 @@
 				<td> <form action="" method="post">
 
 						<input type="hidden" name="D" value="<?php echo $id; ?>"> <!-- thẻ ẩn gửi id cart trong form -->
-						<input style="width:80%" type="number" class="buyfield" name="number" value="<?php echo $quantity; ?>"  />
+						<input  style="width:80%;text-align: center;" type="number" class="buyfield" name="number" value="<?php echo $quantity; ?>"  />
 						</td>
 						<td><?php $tong = $r["gia"]*$quantity;
 						echo number_format($tong);
@@ -57,9 +57,9 @@
 
 		$s+=$tong;
 						?> </td>
-				 <td><a onclick="return confirm('Are you want to delete?')"
-				  href="index.php?mod=cart&ac=del&id=<?php echo $id; ?>" >Delete </a>
-				 	<input type="submit" class="buysubmit" name="submit" value="Update"/></form> 
+				 <td><a onclick="return confirm('Bạn có muốn xóa không?')"
+				  href="index.php?mod=cart&ac=del&id=<?php echo $id; ?>" >Xóa </a>
+				 	<input type="submit" class="buysubmit" name="submit" value="Cập nhật"/></form> 
 				 </td>      
 				</tr>
 				<?php

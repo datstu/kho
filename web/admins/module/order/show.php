@@ -21,7 +21,7 @@ $del = $order -> delete_order2($mahd);
 
 //echo "<pre>";
 
-	$r5 = $order ->TongDon('184');
+	
 
 					
  ?>

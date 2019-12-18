@@ -97,19 +97,31 @@ $c = $cart->show();
 		$dt =postIndex("dienthoai");
 		$sm = postIndex("submit");
 		$account = new account();
+		$err = '';
+		//echo ranbuocSDT($dt);
 
 		if(isset($sm))	
 		{
 			$KT = $account-> KH_Exist($email);
-			if($ten == "" || $email == "" || $diachi == "" || $dt == "")
-				echo "VUI LÒNG Nhập Đủ Thông tin.";
+			if($ten == "" || $diachi == "" )
+			{	echo "Vui lòng nhập thông tin.";
+			  $err =true;
+			}else if (checkEmail($email)==false) 
+			{
+				echo "Định dạng email sai!<br>";
+			$err =true;
+			}else if (ranbuocSDT($dt)==true) 
+			{
+				
+			$err =true;
+		}
 				else{
 
 				if($KT >0)
 				{
 					$up = $account -> update ($email,$ten,$diachi,$dt);
 					if($up >0) echo "Cập nhật  thành công.";
-						else echo "Fail CAP NHAT";
+						
 				}else {
 
 
@@ -118,7 +130,7 @@ $c = $cart->show();
 					else echo "Fails THem";
 						}
 					}
-					echo $email;
+					//echo $email;
 
 
 
@@ -172,7 +184,7 @@ $c = $cart->show();
 	<?php 
 
 	
-	if($email != ''){ ?>
+	if($err == ''){ ?>
 		<div class="dathang">
 		<a href="index.php?mod=order&ac=add&id_accout=<?php echo $email;?>&<?php echo $a; ?>">Đặt Hàng</a></div>
 	<?php } ?>
