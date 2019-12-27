@@ -6,10 +6,11 @@
 	$quantity = postIndex("number");
 	$d = postIndex("D");
 	$sm = postIndex("submit");
+
 	if (isset($sm)){
-	if ($quantity <= 0){
-		$cart->remove($d);
-	}else
+	// if ($quantity <= 0){
+	// 	$cart->remove($d);
+	// }else
 	
 	$edit = $cart->edit($d, $quantity);
 }
@@ -27,7 +28,7 @@
 	
 		if(isset($c)){
 			 ?>
-		<table border="10"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Giá</td><td>Số lượng</td><td>Tổng</td><td>Hoạt Động</td></tr>
+		<table border="10"><tr><td>Hình ảnh</td><td>Tên Sp</td><td>Loại</td><td>Giá</td><td>Số lượng</td><td>Tổng</td><td>Hoạt Động</td></tr>
 				<?php 
 		foreach($c as $id=>$quantity)
 		{
@@ -37,14 +38,15 @@
 			foreach ($sp as $key => $r){
 
 			 $sp = $b->getDetail($id);
-				
 
-				
+			 $maloai = $r["maloai"];
+					
 ?>
 		<tr>
 				
 				<td><img height="200px" src="images/book/<?php echo $r["hinh"] ;?>" alt="<?php echo $r["hinh"] ?>"></td>
 				<td ><?php echo $r["tensp"]; ?></td>
+				<td ><?php echo ($b->layTheoloai($maloai)); ?></td>
 				<td ><?php echo number_format($r["gia"]); ?></td>
 				<td> <form action="" method="post">
 

@@ -52,11 +52,22 @@ $ac = Utils::getIndex("ac", "bookShow");
 if ($ac=="bookShow")
 include ROOT."/admins/module/book/bookshow.php";
 //...
+if ($ac=="add")
+include ROOT."/admins/module/book/addbook.php";
+//...
+if ($ac=="delete")
+include ROOT."/admins/module/book/deleteBook.php";
+//...
+if ($ac=="edit")
+include ROOT."/admins/module/book/edit_book.php";
 //...
 
 }
 
 if ($group=="pub")
 {
-   echo "Các thao tác với nhà xuất bản tại đây nha!";	
+   $ac = Utils::getIndex("ac", "pubShow");
+   if ($ac=="pubShow")
+include ROOT."/admins/module/pub/index.php";
+
 }

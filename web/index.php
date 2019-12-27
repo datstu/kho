@@ -37,6 +37,7 @@ include ROOT."/inc/function.php";
 $cart = new Cart();
 $o = new Order();
 
+
 ?>
 
 <!DOCTYPE html>

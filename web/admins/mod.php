@@ -9,5 +9,7 @@ if ($mod=="order")
 	include "module/order/index.php";
 if ($mod=="acc")
 	include "module/acc/index.php";
+if ($mod=="pub")
+	include "module/pub/index.php";
 
 ?>

@@ -22,6 +22,7 @@ if ($mod== "logout")
 {
 		unset($_SESSION["admin_login"] );
 		unset($_SESSION["admin_data"]);
+
 }
 if (!isset($_SESSION["admin_login"]))
 {
@@ -65,6 +66,7 @@ if (!isset($_SESSION["admin_login"]))
 		<script type="text/javascript" src="resources/scripts/jquery.datePicker.js"></script>
 		<script type="text/javascript" src="resources/scripts/jquery.date.js"></script>
 		
+		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 		
 	</head>
   
@@ -125,7 +127,7 @@ if (!isset($_SESSION["admin_login"]))
 						Đơn hàng
 					</a>
 					<ul>
-						<li><a class="<?php echo $classOrder;?>" href="index.php?mod=order&group=order">Danh Sản phẩm đơn hàng</a></li>
+						<li><a class="<?php echo $classOrder;?>" href="index.php?mod=order&group=order">Danh sách đơn hàng</a></li>
 					<!-- 	<li><a href="#">Đơn hàng đang xử lý</a></li> -->
 					</ul> 
 				</li>
@@ -232,7 +234,7 @@ if (!isset($_SESSION["admin_login"]))
 			
 			<ul class="shortcut-buttons-set">
 				
-				<li><a class="shortcut-button" href="#"><span>
+				<li><a class="shortcut-button" href="index.php?mod=book&ac=add"><span>
 					<img src="resources/images/icons/pencil_48.png" alt="icon" /><br />
 					Write an Article
 				</span></a></li>

@@ -6,15 +6,11 @@ $data = $book->getAll($page);
 //print_r($data);
 $page_count = $book->getPageCount();
 
+
 ?>
 <div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
 						
-						<div class="notification attention png_bg">
-							<a href="#" class="close"><img src="resources/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
-							<div>
-								This is a Content Box. You can put whatever you want in it. By the way, you can close this notification with the top-right cross.
-							</div>
-						</div>
+					
 						
 						<table>
 							
@@ -33,17 +29,18 @@ $page_count = $book->getPageCount();
 							<tfoot>
 								<tr>
 									<td colspan="6">
-										<div class="bulk-actions align-left">
+										<!-- <div class="bulk-actions align-left">
 											<select name="dropdown">
 												<option value="option1">Choose an action...</option>
 												<option value="option2">Edit</option>
 												<option value="option3">Delete</option>
 											</select>
 											<a class="button" href="#">Apply to selected</a>
-										</div>
+										</div> -->
 										
 										<div class="pagination">
-											<a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
+											<a href="index.php?mod=book&page=1" title="First Page">&laquo; First</a><a href="index.php?mod=book&page=<?php  if($page<=1) $n = 1;
+											else $n =$page -1; echo $n; ?>" title="Previous Page">&laquo; Previous</a>
                                             <?php
 											for($i=1; $i<= $page_count; $i++)
 											{ $c =" number ";
@@ -53,7 +50,9 @@ $page_count = $book->getPageCount();
 											<?php
 											}
 											?>
-											<a href="#" title="Next Page">Next &raquo;</a><a href="#" title="Last Page">Last &raquo;</a>
+											<a href="index.php?mod=book&page=<?php  $n =$page +1; echo $n; ?>"
+											 title="Next Page">Next &raquo;</a>
+											<a href="index.php?mod=book&page=<?php echo $page_count; ?>" title="Last Page">Last &raquo;</a>
 										</div> <!-- End .pagination -->
 										<div class="clear"></div>
 									</td>
@@ -74,7 +73,8 @@ $page_count = $book->getPageCount();
 									<td>
 										<!-- Icons -->
 										 <a href="index.php?mod=book&ac=edit&id=<?php echo $r["masp"];?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>&nbsp;&nbsp;
-										 <a href="index.php?mod=book&ac=delete&id=<?php echo $r["masp"];?>" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+										 <a onclick="return confirm('Are you want to delete?')"
+										  href="index.php?mod=book&ac=delete&id=<?php echo $r["masp"];?>" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 										
 									</td>
 								</tr>

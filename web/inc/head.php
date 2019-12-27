@@ -10,6 +10,7 @@
        <!--  end head for login -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
@@ -24,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
-				<script type="text/javascript">
+								<script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
 							event.preventDefault();
@@ -32,24 +33,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					});
 				</script>
-<link rel="stylesheet" href="css/etalage.css">
-<script src="js/jquery.etalage.min.js"></script>
-		<script>
-			jQuery(document).ready(function($){
-
-				$('#etalage').etalage({
-					thumb_image_width: 300,
-					thumb_image_height: 400,
-					source_image_width: 900,
-					source_image_height: 1200,
-					show_hint: true,
-					click_callback: function(image_anchor, instance_id){
-						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-					}
+<!--slider-script-->
+		<script src="js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+				  $("#slider1").responsiveSlides({
+					auto: true,
+					speed: 500,
+					namespace: "callbacks",
+					pager: true,
+				  });
 				});
-
-			});
-		</script>
+			</script>
+<!--//slider-script-->
 <script>$(document).ready(function(c) {
 	$('.alert-close').on('click', function(c){
 		$('.message').fadeOut('slow', function(c){

@@ -35,7 +35,7 @@
 					</div>	
 					
 					<?php }foreach ($sp as $key => $r) {
-						
+						$maloai = $r["maloai"];
 								?>
 					<div class="col-md-7 single-top-in">
 						<div class="single-para">
@@ -109,63 +109,31 @@
 							
 						</div>
 					</div>
-				<div class="clearfix"> </div>
-				<div class="content-top-in">
-						<div class="col-md-4 top-single">
-							<div class="col-md">
-								<img  src="images/pic8.jpg" alt="" />	
-								<div class="top-content">
-									<h5>Mascot Kitty - White</h5>
-									<div class="white">
-										<a href="?mod=cart&ac=home&idsp=<?php echo $r["gia"]; ?>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ hàng</a>
-										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
-										<div class="clearfix"></div>
-									</div>
-								</div>							
-							</div>
-						</div>
-						<div class="col-md-4 top-single">
-							<div class="col-md">
-								<img  src="images/pic9.jpg" alt="" />	
-								<div class="top-content">
-									<h5>Mascot Kitty - White</h5>
-									<div class="white">
-										<a href="#login-box" class="login-window button">Thêm vào giỏ hàng</a>
-										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
-										<div class="clearfix"></div>
-									</div>
-								</div>							
-							</div>
-						</div>
-						<div class="col-md-4 top-single-in">
-							<div class="col-md">
-								<img  src="images/pic10.jpg" alt="" />	
-								<div class="top-content">
-									<h5>Mascot Kitty - White</h5>
-									<div class="white">
-										<a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">Thêm vào giỏ hàng</a>
-										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
-										<div class="clearfix"></div>
-									</div>
-								</div>							
-							</div>
-						</div>
+				
+				
 						
 					<div class="clearfix"></div>
-					</div>
+					
 				</div>
 				<div class="col-md-3">
 					<div class="single-bottom">
+
 						<h4>Loại</h4>
 						<ul>
-						<li><a href="#"><i> </i>Fusce feugiat</a></li>
-						<li><a href="#"><i> </i>Mascot Kitty</a></li>
-						<li><a href="#"><i> </i>Fusce feugiat</a></li>
-						<li><a href="#"><i> </i>Mascot Kitty</a></li>
-						<li><a href="#"><i> </i>Fusce feugiat</a></li>
+						<?php $category = new Category();
+							$l = $category ->getAll();
+
+							 foreach ($l as $key => $r) {
+
+						 	//print_r($r);
+						 ?>
+						
+					<li><a href="index.php?mod=cate&ac=home&maloai=<?php echo $r["tenloai"];  ?>"><i> </i><?php echo $r["tenloai"]; ?></a></li>
+							<?php } ?>
 						</ul>
+				
 					</div>
-					<div class="single-bottom">
+					<!-- <div class="single-bottom">
 						<h4>Bán chạy</h4>
 						<ul>
 						<li><a href="#"><i> </i>feugiat(5)</a></li>
@@ -174,33 +142,27 @@
 						<li><a href="#"><i> </i>Fusce (4)</a></li>
 						<li><a href="#"><i> </i> feugiat(2)</a></li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="single-bottom">
 						<h4>Cùng Loại</h4>
+					<?php $c = new Category();
+						$list = $c->laytheoloai($maloai); 
+						// echo "<pre>";
+						// print_r($list);
+						 foreach ($list as $key => $r) {
+						 	?>
 							<div class="product">
-								<img class="img-responsive fashion" src="images/st1.jpg" alt="">
+								<img style="height: 102px; font-size: 16px; width: 102px;" class="img-responsive fashion" src="images/book/<?php echo $r["hinh"]; ?>" alt="">
 							<div class="grid-product">
-								<a href="#" class="elit">Consectetuer adipiscing elit</a>
-								<span class="price price-in"><small>$500.00</small> $400.00</span>
+								<a href="index.php?mod=book&ac=detail&idsp=<?php echo $r["masp"];  ?>" class="elit"><?php echo $r["tensp"]; ?></a>
+								<!-- <span class="price price-in"><small>$500.00</small> $400.00</span> -->
+								<span class="price price-in"> <?php echo number_format($r["gia"])." VNĐ"; ?></span>
 							</div>
 							<div class="clearfix"> </div>
 							</div>
-							<div class="product">
-								<img class="img-responsive fashion" src="images/st2.jpg" alt="">
-							<div class="grid-product">
-								<a href="#" class="elit">Consectetuer adipiscing elit</a>
-								<span class="price price-in"><small>$500.00</small> $400.00</span>
-							</div>
-							<div class="clearfix"> </div>
-							</div>
-							<div class="product">
-								<img class="img-responsive fashion" src="images/st3.jpg" alt="">
-							<div class="grid-product">
-								<a href="#" class="elit">Consectetuer adipiscing elit</a>
-								<span class="price price-in"><small>$500.00</small> $400.00</span>
-							</div>
-							<div class="clearfix"> </div>
-							</div>
+						<?php } ?>
+							
+							
 				</div>
 				</div>
 				<div class="clearfix"> </div>

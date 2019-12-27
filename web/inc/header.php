@@ -8,7 +8,7 @@
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 							<!-- <li  ><a href="wishlist.html">WISH LIST (0)</a> </li> -->
-							<li  >
+							<!-- <li  >
 							<?php 
 						if (!isset($_SESSION['login']))
 							{
@@ -24,7 +24,7 @@
 								?>
 								<a href='logout.php'>Thoat</a>
 							<?php }?> 
-							 </li>
+							 </li> -->
 
 							<!-- <li ><a href="#" > SHOPPING CART</a></li> -->
 							<li > 
@@ -95,29 +95,16 @@
 				<ul class="nav">
 					<li class="active"><a href="index.php"><i> </i>Trang chủ</a></li>
 											
-						<li><a href="index.php?mod=account&ac=login" >  Đăng Nhập</a></li>            
-						<li><a href="products.html" >Cpu</a></li>						  				 
-						<li><a href="products.html" >Card</a>
-						<ul class="drop">
-							<li><a href="products.html">Card Đồ Họa</a></li>
-							<li><a href="products.html">Card Âm thanh</a></li>
-							<li><a href="products.html">Card Wifi</a></li>
-							
-						</ul>
-						</li>
-						<li><a href="products.html" >Main </a></li>
-						<li><a href="products.html" >  Nguồn  </a></li>
-						<li ><a href="#" >Các sản phẩm khác</a>
-						<ul class="drop">
-							<li><a href="products.html">Chuột</a></li>
-							<li><a href="products.html">Tai nghe</a></li>
-							<li><a href="products.html">Bàn phím</a></li>
-							<li><a href="products.html">Loa</a></li>
-							<li><a href="products.html">fan</a></li>
-							<li><a href="products.html">Usb</a></li>
-						</ul>
-						</li> 
-						<li><a href="contact.php" >Liên Hệ </a></li>
+						          
+						<li><a href="index.php?mod=cate&ac=home&maloai=CPU" >Cpu</a></li>						  				 
+						<li><a href="index.php?mod=cate&ac=home&maloai=CardVideo" >Card</a>	</li>
+						
+							<li><a href="index.php?mod=cate&ac=home&maloai=Main">Main</a></li>
+						
+					
+						
+						
+						<li><a href="index.php?mod=cate&ac=home&maloai=Ram" >Ram </a></li>
 					
 				</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
@@ -125,10 +112,10 @@
 		</div>
 		</div>
 
-		<div class="header-bottom-in">
+		 <div class="header-bottom-in">
 			<div class="container">
 			<div class="header-bottom-on">
-			<p class="wel"><a href="index.php?mod=account&ac=home">Chào bạn, bạn có thể đăng nhập hoặc tạo tài khoản ngay.</a></p>
+			<!-- <p class="wel"><a href="index.php?mod=account&ac=home">Chào bạn, bạn có thể đăng nhập hoặc tạo tài khoản ngay.</a></p> -->
 			<div class="header-can">
 				<ul class="social-in">
 						<li><a href="#"><i> </i></a></li>
@@ -136,17 +123,17 @@
 						<li><a href="#"><i class="twitter"> </i></a></li>					
 						<li><a href="#"><i class="skype"> </i></a></li>
 					</ul>	
-					<div class="down-top">		
+					<!-- <div class="down-top">		
 							<select class="in-drop">
 							  <option value="Dollars" class="in-of">Dollars</option>
 							  <option value="Euro" class="in-of">Euro</option>
 							  <option value="Yen" class="in-of">Yen</option>
 							</select>
-					 </div>
+					 </div> -->
 					<div class="search">
-						<form>
-							<input type="text" value="Tìm kiếm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-							<input type="submit" value="">
+						<form method="post" action="index.php?mod=book&ac=search">
+							<input type="text" name="key" value="Tìm kiếm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="submit" value="" name="s">
 						</form>
 					</div>
 
@@ -155,5 +142,5 @@
 			<div class="clearfix"></div>
 		</div>
 		</div>
-		</div>
+		</div> 
 	

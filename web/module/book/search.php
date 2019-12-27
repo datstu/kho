@@ -1,18 +1,32 @@
-<?php $page = Utils::getIndex("page", 1);
+<?php 
 
+
+
+ $page = Utils::getIndex("page", 1);
+  $k= requestIndex("key");
+  
+
+
+ 	$list =$book ->search($page);
+ 	 $page_count = $book->getPageCount();
+ 	
+ 	if($list >0){
+ 		$s = $book->timthay();
+ 	}
+ 	
  ?>
 <div class="content">
 	
 				<div class="content-top">
-					<h3 class="future">Tất cả sản phẩm</h3>
+					<h3 class="future">Có <?php echo $s; ?> sản phẩm được tìm thấy</h3>
 
 
 
 					
 
 					<div class="content-top-in">
-						<?php $list = $book->getAll($page);
-						$page_count = $book->getPageCount();
+						<?php 
+						
 						 foreach ($list as $key => $r) {
 						 	
 								?>
@@ -73,20 +87,22 @@
 					<div class="clearfix"></div>
 					</div>
 						<div class="pagination">
-											<a href="index.php?mod=book&page=1" title="First Page">&laquo; First</a><a href="index.php?mod=book&page=<?php  if($page<=1) $n = 1;
-											else $n =$page -1; echo $n; ?>" title="Previous Page">&laquo; Previous</a>
+											<a href="index.php?mod=book&ac=search&page=1&key=<?php  echo $k; ?>" title="First Page">&laquo; First</a><a href="index.php?mod=book&ac=search&page=<?php  if($page<=1) $n = 1;
+											else $n =$page -1; echo $n; ?>&key=<?php  echo $k; ?>" title="Previous Page">&laquo; Previous</a>
                                             <?php
 											for($i=1; $i<= $page_count; $i++)
 											{ $c =" number ";
 											  if ($i==$page) $c .=" current ";?>
-											<a href="index.php?mod=book&page=<?php echo $i;?>" class="<?php echo $c;?>" 
+											<a href="index.php?mod=book&ac=search&page=<?php echo $i;?>&key=<?php  echo $k; ?>" class="<?php echo $c;?>" 
                                             	title="<?php echo $i;?>"><?php echo $i;?></a>
 											<?php
 											}
 											?>
-											<a href="index.php?mod=book&page=<?php  $n =$page +1; echo $n; ?>"
+											<a href="index.php?mod=book&ac=search&page=<?php 
+											if($page==$page_count) $n= $page_count;else
+											 $n =$page +1; echo $n; ?>&key=<?php  echo $k; ?>"
 											 title="Next Page">Next &raquo;</a>
-											<a href="index.php?mod=book&page=<?php echo $page_count; ?>" title="Last Page">Last &raquo;</a>
+											<a href="index.php?mod=book&ac=search&page=<?php echo $page_count; ?>&key=<?php  echo $k; ?>" title="Last Page">Last &raquo;</a>
 										</div>
 				</div>
 				<!---->
@@ -196,4 +212,3 @@
 				<!---->
 				
 				
-			
