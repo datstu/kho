@@ -18,7 +18,7 @@ $data = $category->getAll();
 								
 							</thead>
 						 
-							<tfoot>
+					<!-- 		<tfoot>
 								<tr>
 									<td colspan="6">
 										<div class="bulk-actions align-left">
@@ -34,7 +34,7 @@ $data = $category->getAll();
 										<div class="clear"></div>
 									</td>
 								</tr>
-							</tfoot>
+							</tfoot> -->
 						 
 							<tbody>
                             <?php 

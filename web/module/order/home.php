@@ -96,7 +96,7 @@ $c = $cart->show();
 		$diachi =postIndex("diachi");
 		$dt =postIndex("dienthoai");
 		$sm = postIndex("submit");
-		$account = new account();
+		$account = new Account();
 		$err = '';
 		//echo ranbuocSDT($dt);
 

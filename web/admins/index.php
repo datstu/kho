@@ -132,40 +132,11 @@ if (!isset($_SESSION["admin_login"]))
 					</ul> 
 				</li>
 				
-				<li>
-					<a href="#" class="nav-top-item">
-						Quản lý tin tức
-					</a>
-					<ul>
-						<li><a href="index.php?mod=news">Danh Sản phẩm tin tức</a></li>
-						<li><a href="index.php?mod=news&ac=Add">Thêm tin mới</a></li>
-						<li><a href="#">Tin có mình luận mới</a></li>
-						<li><a href="#">....</a></li>
-					</ul>
-				</li>
 				
-				<li>
-					<a href="#" class="nav-top-item">
-						Events Calendar
-					</a>
-					<ul>
-						<li><a href="#">Calendar Overview</a></li>
-						<li><a href="#">Add a new Event</a></li>
-						<li><a href="#">Calendar Settings</a></li>
-					</ul>
-				</li>
 				
-				<li>
-					<a href="#" class="nav-top-item">
-						Settings
-					</a>
-					<ul>
-						<li><a href="#">General</a></li>
-						<li><a href="#">Design</a></li>
-						<li><a href="#">Your Profile</a></li>
-						<li><a href="#">Users and Permissions</a></li>
-					</ul>
-				</li>      
+				
+				
+				  
 				
 			</ul> <!-- End #main-nav -->
 			
@@ -239,7 +210,7 @@ if (!isset($_SESSION["admin_login"]))
 					Write an Article
 				</span></a></li>
 				
-				<li><a class="shortcut-button" href="#"><span>
+			<!-- 	<li><a class="shortcut-button" href="#"><span>
 					<img src="resources/images/icons/paper_content_pencil_48.png" alt="icon" /><br />
 					Create a New Page
 				</span></a></li>
@@ -257,7 +228,7 @@ if (!isset($_SESSION["admin_login"]))
 				<li><a class="shortcut-button" href="#messages" rel="modal"><span>
 					<img src="resources/images/icons/comment_48.png" alt="icon" /><br />
 					Open Modal
-				</span></a></li>
+				</span></a></li> -->
 				
 			</ul><!-- End .shortcut-buttons-set -->
 			

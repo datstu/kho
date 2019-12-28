@@ -105,6 +105,7 @@
 						
 						
 						<li><a href="index.php?mod=cate&ac=home&maloai=Ram" >Ram </a></li>
+						<li><a href="https://drive.google.com/open?id=1WizbndZmFIuiLknMDXERHN0SZLDKJZ_w" target="blank">LINK SOURCE </a></li>
 					
 				</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
@@ -132,7 +133,13 @@
 					 </div> -->
 					<div class="search">
 						<form method="post" action="index.php?mod=book&ac=search">
-							<input type="text" name="key" value="Tìm kiếm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="text" name="key" 
+							value="<?php
+							 if(isset($_POST["key"])) 
+										echo $_POST["key"];
+									else echo "Tìm kiếm";  
+							 ?>" 
+									onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 							<input type="submit" value="" name="s">
 						</form>
 					</div>
